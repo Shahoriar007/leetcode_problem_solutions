@@ -6,3 +6,5 @@ max()
 sort() -> Quicksort
 array_search()
 unset()
+intdiv()
+array_slice()
