@@ -1,8 +1,8 @@
 1. Bubble Sort
 2. Quick Sort
+5. Merge Sort #https://www.youtube.com/watch?v=4VqmGXwpLqc
 3. Selection Sort
 4. Insertion Sort
-5. Merge Sort #https://www.youtube.com/watch?v=4VqmGXwpLqc
 6. Heap Sort #https://www.youtube.com/watch?v=2DmK_H7IdTo
 
 https://leetcode.com/problems/insertion-sort-list/description/
