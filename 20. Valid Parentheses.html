@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bracket Validator</title>
+</head>
+<body>
+    <script>
+        const s = "(]";
+
+
+        //-----------solution 1 start
+
+        /*
+        let stack = []; 
+
+        const firstB = "()";
+        const secondB = "{}";
+        const thirdB = "[]";
+
+
+        for (let i = 0; i < s.length; i++) {
+            const currentChar = s[i];
+
+            if (currentChar === firstB[0] || currentChar === secondB[0] || currentChar === thirdB[0]) {
+                stack.push(currentChar);
+            } else {
+                const last = stack[stack.length - 1]; 
+
+                if (firstB.includes(currentChar)) {
+                    if (last === firstB[0]) {
+                        stack.pop();
+                    } else {
+                        break;
+                    }
+                }
+
+                if (secondB.includes(currentChar)) {
+                    if (last === secondB[0]) {
+                        stack.pop();
+                    } else {
+                        break;
+                    }
+                }
+
+                if (thirdB.includes(currentChar)) {
+                    if (last === thirdB[0]) {
+                        stack.pop();
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (stack.length === 0 ) {
+            console.log("true");
+        } else {
+            console.log("false");
+        }
+
+        */
+
+        //-----------solution 2 start
+
+        const isValid = (s) => {
+            const stack = [];
+            const brackets = {
+                ')': '(',
+                '}': '{',
+                ']': '['
+            };
+
+            for (let i = 0; i < s.length; i++) {
+                const char = s[i];
+
+                // If it's a closing bracket
+                if (brackets[char]) {
+                    const last = stack.pop(); // Remove the top element
+                    if (last !== brackets[char]) {
+                        return false; // Mismatched brackets
+                    }
+                } else {
+                    // It's an opening bracket, push it to the stack
+                    stack.push(char);
+                }
+            }
+
+            // If the stack is empty, all brackets are matched
+            return stack.length === 0;
+        };
+
+        console.log(isValid(s) ? "true" : "false");
+
+    </script>
+</body>
+</html>
