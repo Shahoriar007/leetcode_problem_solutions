@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bracket Validator</title>
+</head>
+<body>
+    <script>
+
+        const path = "/home/user/Documents/../Pictures"
+
+
+        //Rule 1
+        //start with / and end with no /
+
+        var simplifyPath = function(path) {
+            let parts = path.split('/');
+        
+            let stack = [];
+        
+            for (let part of parts) {
+                console.log(part)
+                if (part === '' || part === '.') {
+                    if (part === '..') {
+                        stack.pop();
+                    }else{
+                        stack.push(part);
+                    }
+                } 
+                
+            }
+        
+            return '/' + stack.join('/');
+        
+        };
+
+            console.log(simplifyPath(path));
+
+    </script>
+</body>
+</html>
